@@ -291,3 +291,70 @@ Served asset /jquery.js - 304 Not Modified (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-29 02:04:27 -0600
 Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-07-29 02:36:54 -0600
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (98.1ms)
+Completed 200 OK in 112.8ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-29 02:36:54 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-29 02:36:54 -0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-29 02:36:54 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-29 02:36:54 -0600
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-07-29 02:36:58 -0600
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 26.6ms (Views: 21.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-29 02:36:58 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-29 02:36:58 -0600
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-29 02:36:58 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-29 02:36:58 -0600
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-07-29 02:37:02 -0600
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 21.9ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-29 02:37:02 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-29 02:37:02 -0600
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-29 02:37:02 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-29 02:37:02 -0600
+Served asset /application.js - 304 Not Modified (11ms)
