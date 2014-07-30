@@ -8,23 +8,27 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @all_ratings = Movie.all_ratings
+
     # get which movie field to sort by
     order_field = sort_column
     direction = sort_direction
 
-    # variables used as class identifier (used for css)
-    @class_th_title = ''
-    @class_th_release_date = ''
+    # filter by rating criteria
+    ratings = params[:ratings] || session[:ratings]
 
-    # Set which column to highlight since it is sorted
-    if order_field == 'title'
-      @class_th_title = 'hilite'
-    elsif order_field == 'release_date'
-      @class_th_release_date = 'hilite'
+    unless ratings.nil?
+      # only get specified ratings
+      session[:ratings] = ratings
+      @movies = Movie.find_all_by_rating(ratings.keys, :order => order_field + " " + direction)
+    else
+      # get all ratings by default
+      session[:ratings] = Hash.new
+      @all_ratings.each do |rating|
+        session[:ratings][rating] = '1'
+      end
+      @movies = Movie.order(order_field + " " + direction)
     end
-
-    # get all the movies
-    @movies = Movie.order(order_field + " " + direction)
   end
 
   def new
