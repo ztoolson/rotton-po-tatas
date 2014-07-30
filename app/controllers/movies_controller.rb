@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  helper_method :sort_column, :sort_direction
 
   def show
     id = params[:id] # retrieve movie ID from URI route
@@ -7,7 +8,23 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    # get which movie field to sort by
+    order_field = sort_column
+    direction = sort_direction
+
+    # variables used as class identifier (used for css)
+    @class_th_title = ''
+    @class_th_release_date = ''
+
+    # Set which column to highlight since it is sorted
+    if order_field == 'title'
+      @class_th_title = 'hilite'
+    elsif order_field == 'release_date'
+      @class_th_release_date = 'hilite'
+    end
+
+    # get all the movies
+    @movies = Movie.order(order_field + " " + direction)
   end
 
   def new
@@ -36,6 +53,18 @@ class MoviesController < ApplicationController
     @movie.destroy
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
+  end
+
+  private
+
+  def sort_column
+    # sanitize input
+    %w[title rating release_date].include?(params[:sort]) ? params[:sort] : 'title'
+  end
+
+  def sort_direction
+    # sanitize input
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : ''
   end
 
 end
